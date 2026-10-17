@@ -1,0 +1,1 @@
+{"tag": "payRequest", "callback": "https://livingroomofsatoshi.com/api/v1/lnurl/payreq/1ba8036e-df21-4b0d-bfb2-c381b58d10f3", "minSendable": 1000, "maxSendable": 100000000000, "metadata": "[[\"text/plain\",\"Wallet of Satoshi: dovishgrace545\"],[\"text/identifier\",\"dovishgrace545@walletofsatoshi.com\"]]", "commentAllowed": 255}

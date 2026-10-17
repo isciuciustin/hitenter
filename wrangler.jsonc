@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hitenter-site",
+  "compatibility_date": "2026-10-12",
+  // Static files only: no code runs. No request logs (privacy-first).
+  "observability": { "enabled": false },
+  "assets": { "directory": "public" },
+  "routes": [{ "pattern": "hitenter.app", "custom_domain": true }]
+}
