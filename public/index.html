@@ -4,19 +4,97 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HIT_ENTER</title>
+<meta name="description" content="Private group chat with channels, DMs, files, voice and zaps. No servers: every app is a relay.">
 <style>
-  :root { color-scheme: dark; }
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b0c0f; color: #e5e5e5;
-         font: 16px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; padding: 0 16px; }
-  h1 { font-size: 2.5rem; margin: 0; letter-spacing: 0.02em; }
-  h1 span { color: #3ddc84; }
-  p { color: #9a9a9a; max-width: 32rem; text-align: center; }
+  :root {
+    --bg: #0b0c0f; --panel: #14161b; --edge: #262a33; --text: #e6e6e6;
+    --muted: #9a9ca3; --accent: #3ddc84; --accent-ink: #04130a; --warn: #e8b04a;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f7f7f5; --panel: #ffffff; --edge: #dcdcd6; --text: #16171a;
+      --muted: #5c5e66; --accent: #13854a; --accent-ink: #ffffff; --warn: #8a5a00;
+      color-scheme: light;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 72px 16px 48px; }
+  h1 { font-size: clamp(2.4rem, 8vw, 3.6rem); margin: 0; letter-spacing: 0.01em; line-height: 1.1; }
+  h1 span { color: var(--accent); }
+  .lede { font-size: 1.15rem; margin: 18px 0 8px; }
+  .sub { color: var(--muted); margin: 0 0 32px; }
+  h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 48px 0 14px; }
+  .download { background: var(--panel); border: 1px solid var(--edge); border-radius: 10px; padding: 20px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 14px; }
+  .btn {
+    display: inline-block; padding: 11px 18px; border-radius: 8px; text-decoration: none;
+    font-weight: 700; border: 1px solid var(--edge); color: var(--text);
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn:hover { border-color: var(--accent); }
+  .note { color: var(--muted); font-size: 0.85rem; margin: 6px 0 0; }
+  .beta { color: var(--warn); }
+  pre {
+    background: var(--bg); border: 1px solid var(--edge); border-radius: 8px; padding: 12px;
+    overflow-x: auto; font-size: 0.78rem; color: var(--muted); margin: 12px 0 0;
+  }
+  ul.features { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  ul.features li { background: var(--panel); border: 1px solid var(--edge); border-radius: 10px; padding: 14px 16px; }
+  ul.features b { color: var(--accent); }
+  .plain li { margin: 6px 0; color: var(--muted); }
+  .plain b { color: var(--text); font-weight: 600; }
+  a { color: var(--accent); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--edge); color: var(--muted); font-size: 0.8rem; }
 </style>
 </head>
 <body>
-  <main>
-    <h1>HIT<span>_</span>ENTER</h1>
-    <p>Private group chat where every app is a relay. Coming soon.</p>
-  </main>
+<main>
+  <h1>HIT<span>_</span>ENTER</h1>
+  <p class="lede">Group chat with channels, DMs, files, voice and zaps. No servers: every app is a relay.</p>
+  <p class="sub">Your identity is a key on your own computer. Your groups live on the computers of the people in them.</p>
+
+  <section class="download" aria-labelledby="dl">
+    <h2 id="dl" style="margin-top:0">Download <span class="beta">· beta</span></h2>
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.2/HIT_ENTER_0.1.0-beta.2_amd64.AppImage">Linux · AppImage</a>
+      <a class="btn" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.2/HIT_ENTER_0.1.0-beta.2_amd64.deb">Linux · .deb</a>
+    </div>
+    <p class="note">0.1.0-beta.2 · x86-64 · macOS and Windows are coming. It is a beta: expect rough edges.</p>
+    <pre>chmod +x HIT_ENTER_0.1.0-beta.2_amd64.AppImage
+./HIT_ENTER_0.1.0-beta.2_amd64.AppImage
+
+sha256 (AppImage)  4cd8088db61fc7542f40e59032fb1523f4c5c2a220aab8ef65d0a2b0fb0371af
+sha256 (.deb)      a88003e30ad6179678f36b3c3be863990003183633f845f38ef09258c6a08ed8</pre>
+    <p class="note">All files and checksums: <a href="https://github.com/isciuciustin/hitenter/releases">releases</a>.</p>
+  </section>
+
+  <h2>What it does</h2>
+  <ul class="features">
+    <li><b>Groups and channels.</b> Text and voice channels, roles, moderation. Nobody runs the group but its members.</li>
+    <li><b>DMs, end to end.</b> Encrypted so only the two of you can read them.</li>
+    <li><b>Files.</b> Sent straight between members' computers, only to people allowed to see them.</li>
+    <li><b>Voice.</b> Group calls of up to eight, and calls from a DM.</li>
+    <li><b>Zaps.</b> Tip a message in bitcoin over Lightning, wallet to wallet. HIT_ENTER never holds your money.</li>
+  </ul>
+
+  <h2>Said plainly</h2>
+  <ul class="plain">
+    <li><b>Group messages are not encrypted at rest.</b> Every member's app keeps a copy, and the app says who can read a group.</li>
+    <li><b>Members can see your IP address</b> when you connect to them directly. The app shows a badge when they can.</li>
+    <li><b>Your key is yours.</b> It stays in your system's keychain. Lose it without a backup and nobody can recover it, us included.</li>
+    <li><b>Zaps carry a 1% fee</b>, paid as a separate payment on top and shown before you send. Zaps under 100 sats carry none.</li>
+    <li><b>No telemetry.</b> The app reports nothing to us.</li>
+  </ul>
+
+  <footer>
+    © 2026 HIT_ENTER. All rights reserved. Free to download and use.
+    Third-party licences ship with every download.
+  </footer>
+</main>
 </body>
 </html>
