@@ -64,8 +64,9 @@
       <a class="btn primary" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.3/HIT_ENTER_0.1.0-beta.3_x86_64.AppImage">Linux · AppImage</a>
       <a class="btn" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.3/hit-enter_0.1.0-beta.3_amd64.deb">Linux · .deb</a>
       <a class="btn" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.3/HIT_ENTER_0.1.0-beta.3_aarch64.dmg">macOS · Apple silicon</a>
+      <a class="btn" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.3/HIT_ENTER_0.1.0-beta.3_x64.zip">Windows · x64</a>
     </div>
-    <p class="note">0.1.0-beta.3 · Linux x86-64 (Ubuntu 22.04, Debian 12 and newer) · macOS Apple silicon (M1 and later) · Intel Macs and Windows are coming. It is a beta: expect rough edges.</p>
+    <p class="note">0.1.0-beta.3 · Linux x86-64 (Ubuntu 22.04, Debian 12 and newer) · macOS Apple silicon (M1 and later) · Windows 10 and 11, x64 · Intel Macs are coming. It is a beta: expect rough edges.</p>
     <p class="note"><b>New in beta.3:</b> a native window instead of a web engine. On the same computer, the app went from 264 MB to 32 MB before you sign in, and from 620 MB to 62 MB with a channel of 1,000 messages open.</p>
     <pre>chmod +x HIT_ENTER_0.1.0-beta.3_x86_64.AppImage
 ./HIT_ENTER_0.1.0-beta.3_x86_64.AppImage
@@ -77,6 +78,8 @@ sha256 (.deb)      9ad706f4cebf0b3e26fb557272406e354974d17d56ec919443362f9ad3b73
 
 sha256 (.dmg)      db32f3dd4abfc551c580d0cfd5f482290ee9044d267e0ae523b98946baccfae4</pre>
     <p class="note"><b>Updating on macOS</b> asks for your keychain password, because each unsigned build looks like a new app to macOS. Enter your Mac's login keychain password, or restore your identity from your backup file instead.</p>
+    <p class="note"><b>Windows:</b> unzip it anywhere and run <code>hit-enter.exe</code>; nothing to install. The beta is not code-signed yet, so Windows may say it “protected your PC”: click <b>More info</b>, then <b>Run anyway</b>. <b>Use a headset for calls on Windows</b> for now: echo cancellation is not in the Windows build yet.</p>
+    <pre>sha256 (.zip)      47c0b9f95ac46710dd34495f06dd28a5b2b8e11c4d1d64a362d862f0ef61e454</pre>
     <p class="note">All files and checksums: <a href="https://github.com/isciuciustin/hitenter/releases">releases</a>.</p>
   </section>
 
