@@ -145,6 +145,19 @@
   footer a:hover { color: var(--accent); }
   footer .legal { grid-column: 1 / -1; border-top: 1px solid var(--edge); padding-top: 20px; font-size: .8rem; }
   @media (max-width: 720px) { footer .wrap { grid-template-columns: 1fr 1fr; } footer .brand { grid-column: 1 / -1; } }
+  /* ---- download stats ---- */
+  .dlstats { margin-top: 40px; border: 1px solid var(--edge); border-radius: 14px; padding: 20px; background: var(--panel-2); }
+  .dlstats h3 { margin: 0 0 4px; }
+  .dlstats .sub { color: var(--muted); font-size: .85rem; margin: 0 0 14px; }
+  .dlstats-scroll { overflow-x: auto; }
+  .dlstats table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: .9rem; min-width: 420px; }
+  .dlstats th, .dlstats td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--edge); white-space: nowrap; }
+  .dlstats th:first-child, .dlstats td:first-child { text-align: left; }
+  .dlstats th { color: var(--muted); font-weight: 600; }
+  .dlstats td b { color: var(--accent); }
+  .dlstats tr.total td { font-weight: 700; border-bottom: 0; }
+  .dlstats .days { display: flex; gap: 6px; align-items: flex-end; height: 64px; margin-top: 18px; }
+  .dlstats .days span { flex: 1; background: var(--accent); border-radius: 3px 3px 0 0; min-height: 2px; opacity: .85; }
 </style>
 </head>
 <body>
@@ -290,6 +303,43 @@
         </div>
       </div>
     </div>
+
+    <div class="dlstats" id="stats" hidden>
+      <h3>Downloads</h3>
+      <p class="sub" id="stats-sub"></p>
+      <div class="stats-scroll"><table>
+        <thead><tr><th>Version</th><th>Windows</th><th>macOS</th><th>GNU/Linux</th><th>All</th></tr></thead>
+        <tbody id="stats-body"></tbody>
+      </table></div>
+      <div class="days" id="stats-days" aria-label="Downloads per day, last 30 days"></div>
+    </div>
+    <script>
+    // Daily counts = today's totals minus yesterday's (snapshots from .github/workflows/stats.yml).
+    fetch("/stats.json").then(r => r.json()).then(s => {
+      const days = s.days, last = days[days.length - 1], prev = days[days.length - 2];
+      const os = ["windows", "macos", "linux"], sum = c => os.reduce((a, k) => a + (c?.[k] || 0), 0);
+      const cell = (t, d) => `<td>${t}${prev ? ` <b>+${d}</b>` : ""}</td>`;
+      let rows = "", tot = { windows: 0, macos: 0, linux: 0 }, totD = { windows: 0, macos: 0, linux: 0 };
+      for (const [tag, c] of Object.entries(last.totals)) {
+        const p = prev?.totals[tag] || {};
+        rows += `<tr><td>${tag.replace(/^v/, "")}</td>` +
+          os.map(k => { const d = c[k] - (p[k] || 0); tot[k] += c[k]; totD[k] += d; return cell(c[k], d); }).join("") +
+          cell(sum(c), sum(c) - sum(p)) + "</tr>";
+      }
+      rows += `<tr class="total"><td>All versions</td>` + os.map(k => cell(tot[k], totD[k])).join("") +
+        cell(sum(tot), sum(totD)) + "</tr>";
+      document.getElementById("stats-body").innerHTML = rows;
+      document.getElementById("stats-sub").textContent = prev
+        ? `All-time totals, with today's downloads in green (UTC). Updated ${last.date}.`
+        : `All-time totals. Daily counts start tomorrow. Updated ${last.date}.`;
+      const daily = days.slice(-31).map((d, i, a) => i ? Object.values(d.totals).reduce((x, c) => x + sum(c), 0) -
+        Object.values(a[i - 1].totals).reduce((x, c) => x + sum(c), 0) : null).slice(1);
+      const max = Math.max(1, ...daily);
+      document.getElementById("stats-days").innerHTML = daily.map((n, i) =>
+        `<span style="height:${n / max * 100}%" title="${days.slice(-daily.length)[i].date}: ${n}"></span>`).join("");
+      document.getElementById("stats").hidden = false;
+    }).catch(() => {});
+    </script>
 
     <details>
       <summary>New in beta.4</summary>
