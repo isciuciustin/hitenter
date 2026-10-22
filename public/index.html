@@ -38,7 +38,10 @@
   .pill.ghost { background: transparent; color: var(--text); border-color: var(--edge); }
   .pill.ghost:hover { border-color: var(--accent); background: transparent; }
   nav .pill { padding: 9px 18px; font-size: .9rem; }
-  @media (max-width: 720px) { nav ul { display: none; } nav .wrap { justify-content: space-between; } }
+  .gh-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); text-decoration: none; font-weight: 600; font-size: .9rem; }
+  .gh-link:hover { color: var(--text); }
+  .gh-link .tag { font: 700 .72rem/1 var(--mono); color: var(--accent); border: 1px solid var(--edge); border-radius: 999px; padding: 4px 8px; }
+  @media (max-width: 720px) { nav ul { display: none; } nav .wrap { justify-content: space-between; gap: 16px; } nav .gh-link { margin-left: auto; } nav .gh-link .tag { display: none; } }
 
   /* ---- hero ---- */
   .hero { position: relative; min-height: min(88vh, 820px); display: grid; place-items: center; text-align: center; padding: 96px 0; overflow: hidden; }
@@ -158,6 +161,7 @@
       <li><a href="#plainly">Said plainly</a></li>
       <li><a href="#download">Download</a></li>
     </ul>
+    <a class="gh-link" href="https://github.com/isciuciustin/HIT_ENTER" title="Source code on GitHub (MIT)" aria-label="Source code on GitHub"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg><span class="tag">OPEN SOURCE</span></a>
     <a class="pill" href="#download">Get the app</a>
   </div>
 </nav>
@@ -348,6 +352,7 @@ sha256 (.dmg)      eec2031009a84264c9d59f49f69a3e9df726c8c5713773c61d59365795b75
     <div class="brand">
       <a class="logo" href="#top">HIT<span>_</span>ENTER</a>
       <p>Group chat where every app is a relay.</p>
+      <p><a class="gh-link" href="https://github.com/isciuciustin/HIT_ENTER"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>Open source on GitHub · MIT</a></p>
     </div>
     <div><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#download">Download</a></li><li><a href="https://github.com/isciuciustin/hitenter/releases">Releases</a></li><li><a href="https://github.com/isciuciustin/HIT_ENTER">Source code</a></li></ul></div>
     <div><h4>About</h4><ul><li><a href="#about">Mission</a></li><li><a href="#plainly">Said plainly</a></li></ul></div>
