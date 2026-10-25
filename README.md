@@ -3,7 +3,7 @@
 Private group chat with channels, DMs, files, voice and zaps. No servers:
 every app is a relay.
 
-**Download:** see [Releases](https://github.com/isciuciustin/hitenter/releases)
+**Download:** see [Releases](https://github.com/justin-hakr-flexer/hitenter/releases)
 or [hitenter.app](https://hitenter.app).
 
 This repository holds the website and the release binaries only. HIT_ENTER
