@@ -141,7 +141,13 @@
   .key:active { transform: translateY(8px); box-shadow: 0 0 0 #1e8a50; }
 
   footer { border-top: 1px solid var(--edge); padding: 48px 0 40px; color: var(--muted); font-size: .9rem; }
-  footer .wrap { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 32px; }
+  footer .wrap { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 32px; }
+  footer .donate small { display: block; color: var(--muted); margin-bottom: 4px; }
+  footer .donate code { display: block; font: .78rem/1.4 var(--mono); color: var(--text); word-break: break-all; user-select: all; }
+  footer .donate details { margin-top: 10px; padding: 8px 12px; border-radius: 10px; }
+  footer .donate small.next { margin-top: 18px; }
+  footer .donate summary { cursor: pointer; }
+  footer .donate img { display: block; margin-top: 10px; width: 160px; height: 160px; border-radius: 8px; }
   footer h4 { color: var(--text); margin: 0 0 12px; font-size: .95rem; }
   footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
   footer a { color: var(--muted); text-decoration: none; }
@@ -357,6 +363,14 @@ sha256 (.dmg)      a50294e0f2a52edf09788b70417b3f1a2e6453537adf8710a1997ce23e5c0
     <div><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#download">Download</a></li><li><a href="https://github.com/isciuciustin/hitenter/releases">Releases</a></li><li><a href="https://github.com/isciuciustin/HIT_ENTER">Source code</a></li></ul></div>
     <div><h4>About</h4><ul><li><a href="#about">Mission</a></li><li><a href="#plainly">Said plainly</a></li><li><a href="mailto:contact@hitenter.app">contact@hitenter.app</a></li></ul></div>
     <div><h4>Legal</h4><ul><li><a href="https://github.com/isciuciustin/HIT_ENTER/blob/main/LICENSE">App licence (MIT)</a></li><li><a href="https://github.com/isciuciustin/hitenter/blob/main/LICENSE">Site licence</a></li></ul></div>
+    <div class="donate"><h4>Donate</h4>
+      <small>Lightning</small>
+      <code>JustinHakrFlexer@coinos.io</code>
+      <details><summary>QR code</summary><img src="/donate-ln.svg" alt="QR code for the Lightning address above"></details>
+      <small class="next">Bitcoin (on-chain)</small>
+      <code>bc1qjdvj7ahwdyf9x62w0sxaly4npxly8hfz3xx8qv</code>
+      <details><summary>QR code</summary><img src="/donate-btc.svg" alt="QR code for the bitcoin address above"></details>
+    </div>
     <div class="legal">© 2026 HIT_ENTER. The app is free and open source under the MIT licence.</div>
   </div>
 </footer>
