@@ -273,52 +273,52 @@
     <div class="dl-grid">
       <div class="os">
         <h3>GNU/Linux</h3>
-        <p class="v">0.1.0-beta.4 · x86-64 · Ubuntu 22.04, Debian 12 and newer</p>
+        <p class="v">0.1.0-beta.5 · x86-64 · Ubuntu 22.04, Debian 12 and newer</p>
         <div class="btns">
-          <a class="pill" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.4/HIT_ENTER_0.1.0-beta.4_x86_64.AppImage">AppImage</a>
-          <a class="pill ghost" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.4/hit-enter_0.1.0-beta.4_amd64.deb">.deb</a>
+          <a class="pill" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.5/HIT_ENTER_0.1.0-beta.5_x86_64.AppImage">AppImage</a>
+          <a class="pill ghost" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.5/hit-enter_0.1.0-beta.5_amd64.deb">.deb</a>
         </div>
       </div>
       <div class="os">
         <h3>macOS</h3>
-        <p class="v">0.1.0-beta.4 · Apple silicon (M1 and later) · Intel Macs are coming</p>
+        <p class="v">0.1.0-beta.5 · Apple silicon (M1 and later) · Intel Macs are coming</p>
         <div class="btns">
-          <a class="pill" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.4/HIT_ENTER_0.1.0-beta.4_aarch64.dmg">.dmg</a>
+          <a class="pill" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.5/HIT_ENTER_0.1.0-beta.5_aarch64.dmg">.dmg</a>
         </div>
       </div>
       <div class="os">
         <h3>Windows</h3>
-        <p class="v">0.1.0-beta.4 · Windows 10 and 11, x64</p>
+        <p class="v">0.1.0-beta.5 · Windows 10 and 11, x64</p>
         <div class="btns">
-          <a class="pill" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.4/HIT_ENTER_0.1.0-beta.4_x64.zip">.zip</a>
+          <a class="pill" href="https://github.com/isciuciustin/hitenter/releases/download/v0.1.0-beta.5/HIT_ENTER_0.1.0-beta.5_x64.zip">.zip</a>
         </div>
       </div>
     </div>
 
     <details>
-      <summary>New in beta.4</summary>
-      <p>Colour emoji in reactions, a cleaner emoji picker, smoother rounded corners, and fixes in the DM list and message list.</p>
+      <summary>New in beta.5</summary>
+      <p>Public communities: make a group public in one choice, browse and search communities (groups people you know are in come first), read a public group before joining, a short <i>about</i> line for each group, and your profile on public Nostr relays. Your DM inbox is on by default. <b>Everyone in a group, and its anchor, should update</b>: beta.4 cannot join a public group.</p>
     </details>
     <details>
       <summary>Linux: run it and check it</summary>
-      <pre>chmod +x HIT_ENTER_0.1.0-beta.4_x86_64.AppImage
-./HIT_ENTER_0.1.0-beta.4_x86_64.AppImage
+      <pre>chmod +x HIT_ENTER_0.1.0-beta.5_x86_64.AppImage
+./HIT_ENTER_0.1.0-beta.5_x86_64.AppImage
 
-sha256 (AppImage)  81b2e413e3f850f51d58b9469e5e0e087960b0164f9eca6ee1852ee8838773b5
-sha256 (.deb)      cae297679e03c7cf5c4c3aeac151198c436fbaf900cd52cda5d9a5b6cab7d79d</pre>
+sha256 (AppImage)  da8407772b3c445411d2fd28a0e9b0551009e70997cf16abfcfa0868c1763b6c
+sha256 (.deb)      e11c2a4d1baea36cff102e6e8d6da540574334daf112d60fd7b05daa1ad560f8</pre>
     </details>
     <details>
       <summary>macOS: “is damaged and can't be opened”</summary>
       <p>The beta is not signed by Apple yet. Drag HIT_ENTER into Applications, then run this once in Terminal:</p>
       <pre>xattr -dr com.apple.quarantine /Applications/HIT_ENTER.app
 
-sha256 (.dmg)      eec2031009a84264c9d59f49f69a3e9df726c8c5713773c61d59365795b753cf</pre>
+sha256 (.dmg)      a50294e0f2a52edf09788b70417b3f1a2e6453537adf8710a1997ce23e5c0c92</pre>
       <p><b>Updating on macOS</b> asks for your keychain password, because each unsigned build looks like a new app to macOS. Enter your Mac's login keychain password, or restore your identity from your backup file instead.</p>
     </details>
     <details>
       <summary>Windows: “Windows protected your PC”</summary>
       <p>Unzip it anywhere and run <code>hit-enter.exe</code>; nothing to install. The beta is not code-signed yet: click <b>More info</b>, then <b>Run anyway</b>. <b>Use a headset for calls on Windows</b> for now: echo cancellation is not in the Windows build yet.</p>
-      <pre>sha256 (.zip)      db5d8fd6ad0aa4528f94adc5b32ca6ece2d82dff9d19bae3c8461bf9c97deaaf</pre>
+      <pre>sha256 (.zip)      00cc2727ecbdfffd13440fd76013b133e74a18b8b7d07af70e6457a31e0db7a3</pre>
     </details>
     <p style="color:var(--muted);font-size:.9rem;margin-top:18px">All files and checksums: <a href="https://github.com/isciuciustin/hitenter/releases">releases</a>. Source code: <a href="https://github.com/isciuciustin/HIT_ENTER">github.com/isciuciustin/HIT_ENTER</a>.</p>
   </div>
